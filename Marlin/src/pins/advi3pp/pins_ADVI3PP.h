@@ -64,10 +64,14 @@
 #define X_DIR_PIN               62  // PK0 / A8
 #define X_ENABLE_PIN            60  // PF6 / A6
 
-#define Y_STEP_PIN              64  // PK2 / A10
-#define Y_DIR_PIN               65  // PK3 / A11
+// #define Y_STEP_PIN              64  // PK2 / A10  - DEFAULT
+#define Y_STEP_PIN              33  // redefined using extension header
+// #define Y_DIR_PIN               65  // PK3 / A11 - DEFAULT
+#define Y_DIR_PIN               35  // redefined using extension header
+
 #if MB(ADVI3PP_I3_PLUS_51) || MB(ADVI3PP_I3_PLUS_52C)
-  #define Y_ENABLE_PIN          63  // PK1 / A9
+  // #define Y_ENABLE_PIN          63  // PK1 / A9 - DEFAULT
+  #define Y_ENABLE_PIN          37  // redefined using extension header
 #elif MB(ADVI3PP_I3_PLUS_54)
   #define Y_ENABLE_PIN           2  // PE4 / INT4
 #else
@@ -78,10 +82,12 @@
 #define Z_DIR_PIN               69  // PK7 / A15
 #define Z_ENABLE_PIN            66  // PK4 / A12
 
-#define E0_STEP_PIN             58  // PF4 / A4
-#define E0_DIR_PIN              59  // PF5 / A5
-#define E0_ENABLE_PIN           57  // PF3 / A3
-
+// #define E0_STEP_PIN             58  // PF4 / A4
+// #define E0_DIR_PIN              59  // PF5 / A5
+// #define E0_ENABLE_PIN           57  // PF3 / A3
+#define E0_STEP_PIN             32  // PF4 / A4
+#define E0_DIR_PIN              34  // PF5 / A5
+#define E0_ENABLE_PIN           36  // PF3 / A3
 //
 // Temperature Sensors
 //
@@ -99,7 +105,8 @@
 //
 // Filament Runout sensor
 //
-#define FIL_RUNOUT_PIN          36 // PC1 / A9
+// #define FIL_RUNOUT_PIN          36 // PC1 / A9
+#define FIL_RUNOUT_PIN          40 //  redefined so we can use 36 for enable pin
 
 //
 // SD card
@@ -134,13 +141,13 @@
  * ##################################
  * #  1  | 52 / PG1 (!RD) |    40   #
  * #  2  | 95 / PF2 (A2)  |    56   #
- * #  3  | 54 / PC1 (A9)  |    36   #
- * #  4  | 53 / PC0 (A8)  |    37   #
- * #  5  | 56 / PC3 (A11) |    34   #
- * #  6  | 55 / PC2 (A10) |    35   #
- * #  7  | 58 / PC5 (A13) |    32   #
- * #  8  | 57 / PC4 (A12) |    33   #
- * #  9  |       GND      |     -   #
+ * #  3  | 54 / PC1 (A9)  |    36   # // EN Extruder
+ * #  4  | 53 / PC0 (A8)  |    37   # // EN Y
+ * #  5  | 56 / PC3 (A11) |    34   # // DIR Extruder 
+ * #  6  | 55 / PC2 (A10) |    35   # // DIR Y
+ * #  7  | 58 / PC5 (A13) |    32   # // STEP Extruder
+ * #  8  | 57 / PC4 (A12) |    33   # // STEP Y
+ * #  9  |       GND      |     -   # 
  * # 10  |       VCC      |     +   #
  * ##################################
  *
