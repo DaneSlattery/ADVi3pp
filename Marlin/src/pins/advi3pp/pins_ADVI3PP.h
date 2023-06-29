@@ -73,7 +73,8 @@
   // #define Y_ENABLE_PIN          63  // PK1 / A9 - DEFAULT
   #define Y_ENABLE_PIN          37  // redefined using extension header
 #elif MB(ADVI3PP_I3_PLUS_54)
-  #define Y_ENABLE_PIN           2  // PE4 / INT4
+  // #define Y_ENABLE_PIN           2  // PE4 / INT4
+  #define Y_ENABLE_PIN          37  // redefined using extension header
 #else
 #error "Unknown i3 Plus mainboard"
 #endif
